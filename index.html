@@ -3,27 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded iFrame</title>
-    <style>
-        .iframe-container {
-            position: relative;
-            width: 100%;
-            height: 200px; /* Set the height you need */
-            overflow: hidden;
-        }
-        .iframe-container iframe {
-            position: absolute;
-            top: -220px; /* Adjust based on the part you want to show */
-            left: 0;
-            width: 100%;
-            height: 800px; /* Adjust based on the part you want to show */
-            border: 0;
-        }
-    </style>
+    <title>Lower Video Quality</title>
 </head>
 <body>
-    <div class="iframe-container">
-        <iframe src="https://bokulsports.com/livetv/watch/uefa-euro-live-2/180" scrolling="no" allowfullscreen></iframe>
-    </div>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width:110%;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+    <iframe id="videoPlayer" src="https://idn.gdplayertv.to/live-tv/sport-tv1/?embed=1&autoplay=1&mute=1" frameborder="0" allow="autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.getElementById('videoPlayer');
+            const lowQualityUrl = "https://idn.gdplayertv.to/live-tv/sport-tv1/?embed=1&autoplay=1&mute=1&quality=low"; // Example URL with quality parameter
+
+            iframe.src = lowQualityUrl;
+        });
+    </script>
 </body>
 </html>
